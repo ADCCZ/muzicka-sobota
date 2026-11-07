@@ -294,7 +294,7 @@ PROGRAMS.nedele = {
       order: ["1", "2", "R", "3", "R", "Z"]
     },
 
-    { type: "section", title: "Písně na přání" },
+    { type: "section", title: "Písně na přání", note: "vyberte si 2–3 písně" },
 
     { type: "section", title: "Vysvětlení hry" },
 

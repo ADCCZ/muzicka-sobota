@@ -111,8 +111,8 @@
   let songNo = 0;
   for (const item of PROG.items) {
     if (item.type === "section") {
-      setlist.push({ label: item.title, start: slides.length, kind: "section" });
-      slides.push({ kind: "section", title: item.title });
+      setlist.push({ label: item.title, sub: item.note, start: slides.length, kind: "section" });
+      slides.push({ kind: "section", title: item.title, note: item.note });
     } else {
       songNo++;
       setlist.push({ label: item.title, sub: item.author, start: slides.length, kind: "song", song: item });
@@ -191,6 +191,7 @@
     } else if (slide.kind === "section") {
       const w = el("div", "wrap");
       w.append(logo(), el("div", "big blk", slide.title));
+      if (slide.note) w.append(el("div", "note", slide.note));
       c.append(figura(), w);
     } else if (slide.kind === "song") {
       const w = el("div", "wrap");

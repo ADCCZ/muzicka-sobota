@@ -59,6 +59,7 @@ button { font: inherit; }
 }
 .s-section .logo { width: min(26cqw, 50cqh); opacity: .9; }
 .s-section .big { font-size: min(17cqh, 10cqw); color: var(--pink); text-align: center; }
+.s-section .note { font-family: "Grenze"; font-weight: 500; font-size: min(7cqh, 4.2cqw); color: var(--white); margin-top: -2cqh; letter-spacing: .02em; }
 
 /* Název písně */
 .s-song .wrap {
@@ -152,6 +153,7 @@ body.presenter { background: var(--ui); font-family: system-ui, -apple-system, "
 .p-list button.cur { background: var(--pink); color: #2a1210; }
 .p-list button.sec { font-family: "Blaka"; color: var(--pink); font-size: 17px; }
 .p-list button.sec.cur { color: #2a1210; }
+.p-list button.sec small { font-family: system-ui, sans-serif; }
 .p-list small { display: block; opacity: .65; font-size: 12px; }
 .p-parts { grid-column: 1; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; min-height: 34px; }
 .p-parts .lbl { color: #a98; font-size: 13px; margin-right: 4px; }
