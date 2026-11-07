@@ -179,10 +179,6 @@ PROGRAMS.nedele = {
       order: ["1", "R", "2", "R", "3", "R"]
     },
 
-    { type: "section", title: "Písně na přání" },
-
-    { type: "section", title: "Vysvětlení hry" },
-
     {
       type: "song",
       title: "Zlaté město",
@@ -297,6 +293,10 @@ PROGRAMS.nedele = {
       },
       order: ["R", "1", "R", "2", "R", "3", "R", "4", "R"]
     },
+
+    { type: "section", title: "Písně na přání" },
+
+    { type: "section", title: "Vysvětlení hry" },
 
     {
       type: "song",
