@@ -47,10 +47,10 @@ PROGRAMS.sobota = {
       },
       "B": {
         label: "Bridge",
-        repeat: 2,
+        repeat: 4,
         lines: [
-          "Jen [G]kvůli Tobě jsem, [D]kvůli Tobě smím,",
-          "[G]kvůli Tobě mám, [A]kvůli Tobě vím."
+          "Jen [G]kvůli Tobě jsem,\n[D]kvůli Tobě smím,",
+          "[G]kvůli Tobě mám,\n[A]kvůli Tobě vím."
         ]
       }
     },
