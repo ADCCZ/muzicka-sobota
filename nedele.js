@@ -95,59 +95,7 @@ PROGRAMS.nedele = {
       order: ["1", "B", "R", "2", "B", "R"]
     },
 
-    {
-      type: "song",
-      title: "Zlaté město",
-      author: "Max Lucado",
-      source: "Zpěvník 4, str. 55",
-      parts: {
-        "1": {
-          label: "1.",
-          lines: [
-            "[a]Zkoušky [G]tvé již brzy [d]skončí,",
-            "[a]Jeho [G]dlaň ti milost [d]dá.",
-            "[F]Zraně[G]ní tvá uzdra[C(/E)]ví se,",
-            "[F]novou [a]zem ti otví[G]rá."
-          ]
-        },
-        "2": {
-          label: "2.",
-          lines: [
-            "[a]K Tvému [G]trůnu přichá[d]zíme,",
-            "[a]domů [G]shromáždil jsi [d]nás.",
-            "[F]Vítá[G]ni jsme Otcem z [C(/E)]nebes,",
-            "[F]oče[a]kávání je [G]čas."
-          ]
-        },
-        "R": {
-          label: "Ref.",
-          lines: [
-            "Setká[a]me se ve městě [C]zlatém, čeká [G]nás Jeruza[d]lém,",
-            "žádná [F]bolest ani [G]pláč už nebu[a]dou.",
-            "---",
-            "Budem [a]stát s anděly a [C]zpívat: „Svatý, [G]svatý Berán[d]ek“,",
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
-          ]
-        },
-        "3": {
-          label: "3.",
-          lines: [
-            "[a]Žádná [G]síla mocí [d]temných,",
-            "[a]ani [G]život, ani [d]smrt,",
-            "[F]nic nás [G]více neod[C(/E)]dělí",
-            "[F]od Tvé [a]lásky, Bože [G]náš."
-          ]
-        },
-        "Z": {
-          label: "Závěr",
-          lines: [
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou,",
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
-          ]
-        }
-      },
-      order: ["1", "2", "R", "3", "R", "Z"]
-    },
+    { type: "section", title: "Zamyšlení" },
 
     {
       type: "song",
@@ -235,7 +183,59 @@ PROGRAMS.nedele = {
 
     { type: "section", title: "Vysvětlení hry" },
 
-    { type: "section", title: "Zamyšlení" },
+    {
+      type: "song",
+      title: "Zlaté město",
+      author: "Max Lucado",
+      source: "Zpěvník 4, str. 55",
+      parts: {
+        "1": {
+          label: "1.",
+          lines: [
+            "[a]Zkoušky [G]tvé již brzy [d]skončí,",
+            "[a]Jeho [G]dlaň ti milost [d]dá.",
+            "[F]Zraně[G]ní tvá uzdra[C(/E)]ví se,",
+            "[F]novou [a]zem ti otví[G]rá."
+          ]
+        },
+        "2": {
+          label: "2.",
+          lines: [
+            "[a]K Tvému [G]trůnu přichá[d]zíme,",
+            "[a]domů [G]shromáždil jsi [d]nás.",
+            "[F]Vítá[G]ni jsme Otcem z [C(/E)]nebes,",
+            "[F]oče[a]kávání je [G]čas."
+          ]
+        },
+        "R": {
+          label: "Ref.",
+          lines: [
+            "Setká[a]me se ve městě [C]zlatém, čeká [G]nás Jeruza[d]lém,",
+            "žádná [F]bolest ani [G]pláč už nebu[a]dou.",
+            "---",
+            "Budem [a]stát s anděly a [C]zpívat: „Svatý, [G]svatý Berán[d]ek“,",
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+          ]
+        },
+        "3": {
+          label: "3.",
+          lines: [
+            "[a]Žádná [G]síla mocí [d]temných,",
+            "[a]ani [G]život, ani [d]smrt,",
+            "[F]nic nás [G]více neod[C(/E)]dělí",
+            "[F]od Tvé [a]lásky, Bože [G]náš."
+          ]
+        },
+        "Z": {
+          label: "Závěr",
+          lines: [
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou,",
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+          ]
+        }
+      },
+      order: ["1", "2", "R", "3", "R", "Z"]
+    },
 
     {
       type: "song",
