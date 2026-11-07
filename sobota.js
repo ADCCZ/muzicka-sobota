@@ -3,7 +3,8 @@
  *
  * Formát textů: akord se píše do hranatých závorek před slabiku, na které zazní:
  *   "[D]Máš, má ovečko, [A]dávno spát"
- * "---" = ruční zlom slajdu. Část delší než 4 řádky se rozdělí automaticky (max. 4 řádky na slajd).
+ * "---" = ruční zlom slajdu, "\\n" = ruční zalomení řádku. Dlouhé řádky (> 32 znaků) se zalomí samy,
+ * na slajdu jsou max. 4 řádky.
  * `repeat: 2` u části = celá část se zopakuje (slajdy se zobrazí dvakrát).
  * Opakovaný řádek uvnitř sloky se prostě napíše dvakrát.
  *
@@ -190,8 +191,9 @@ PROGRAMS.sobota = {
         lines: [
           "[D]Máš, má ovečko, [A]dávno spát",
           "a [G]můžeš hrát, ty mě [E]můžeš hrát,",
+          "---",
           "vždyť [D]přijdou se [G]ptát, zítra zas při[D]jdou se [G]ptát,",
-          "jestli ty v [D]mých předsta[G]vách už [D]mizíš."
+          "jestli ty v [D]mých předsta[G]vách\nuž [D]mizíš."
         ]
       },
       "2": {

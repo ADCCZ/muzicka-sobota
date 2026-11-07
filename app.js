@@ -39,6 +39,72 @@
     document.getElementById("app").append(stage);
   }
 
+  /* ---------- Dělení textu na slajdy ----------
+   * 1) dlouhý řádek (> MAX_CHARS znaků) se zalomí v přirozeném místě (čárka, spojka, střed),
+   * 2) slajd má max. MAX_LINES řádků; kusy jednoho zalomeného řádku drží pohromadě,
+   * 3) "---" v textu = ruční zlom slajdu, "\\n" uvnitř řádku = ruční zalomení řádku.
+   */
+  const MAX_LINES = 4;
+  const MAX_CHARS = 32;
+  const BREAK_BEFORE = new Set("a i že když ať ale však jak než aby".split(" "));
+  const stripCh = raw => raw.replace(/\[[^\]]*\]/g, "").replace(/\s+/g, " ").trim();
+
+  function breakLine(raw) {
+    if (raw.includes("\n")) return raw.split("\n").flatMap(breakLine);   // ruční zalomení řádku
+    raw = raw.trim();
+    if (stripCh(raw).length <= MAX_CHARS) return [raw];
+    let best = -1, bestScore = Infinity, depth = 0;
+    for (let i = 0; i < raw.length - 1; i++) {
+      const c = raw[i];
+      if (c === "[") depth++; else if (c === "]") depth--;
+      if (depth || c !== " ") continue;
+      const left = stripCh(raw.slice(0, i)), right = stripCh(raw.slice(i + 1));
+      if (left.length < 8 || right.length < 8) continue;
+      const lastWord = left.split(" ").pop(), firstWord = right.split(" ")[0].toLowerCase();
+      if (lastWord.length === 1) continue;                 // „a“, „v“, „s“… nenechat na konci řádku
+      const punct = /[,;:!?.–—“"]$/.test(left);
+      const conj = BREAK_BEFORE.has(firstWord);
+      const score = Math.abs(left.length - right.length) - (punct ? 14 : 0) - (conj ? 3 : 0);
+      if (score < bestScore) { bestScore = score; best = i; }
+    }
+    if (best < 0) return [raw];
+    return [...breakLine(raw.slice(0, best)), ...breakLine(raw.slice(best + 1))];
+  }
+
+  /* Rozdělí jednotky (řádky) na co nejméně slajdů, co nejrovnoměrněji. */
+  function packUnits(units) {
+    const sz = units.map(u => u.length), N = sz.length;
+    const total = sz.reduce((a, b) => a + b, 0);
+    const sum = (i, j) => sz.slice(i, j).reduce((a, b) => a + b, 0);
+    for (let k = Math.max(1, Math.ceil(total / MAX_LINES)); k <= N; k++) {
+      let best = null;
+      const rec = (start, left, cuts) => {
+        if (left === 1) {
+          const starts = [...cuts, start];
+          const sizes = starts.map((st, i) => sum(st, starts[i + 1] ?? N));
+          if (sizes.some((v, i) => v > MAX_LINES && (starts[i + 1] ?? N) - starts[i] > 1)) return;
+          const key = [Math.max(...sizes), sizes.reduce((a, b) => a + b * b, 0), ...sizes];
+          const d = best ? key.findIndex((v, i) => v !== best.key[i]) : -1;
+          if (!best || (d >= 0 && key[d] < best.key[d])) best = { key, starts };
+          return;
+        }
+        for (let e = start + 1; e <= N - left + 1; e++) {
+          if (sum(start, e) > MAX_LINES && e - start > 1) break;
+          rec(e, left - 1, [...cuts, start]);
+        }
+      };
+      rec(0, k, []);
+      if (best) return best.starts.map((st, i) => units.slice(st, best.starts[i + 1] ?? N).flat());
+    }
+    return [units.flat()];
+  }
+
+  function splitChunks(lines) {
+    const groups = [[]];
+    for (const l of lines) { if (l.trim() === "---") groups.push([]); else groups[groups.length - 1].push(l); }
+    return groups.filter(g => g.length).flatMap(g => packUnits(g.map(l => breakLine(l))));
+  }
+
   /* ---------- Slajdy z PROGRAMu ---------- */
   const slides = [{ kind: "title" }];
   const setlist = [{ label: "Titulní strana", start: 0, kind: "title" }];
@@ -68,18 +134,6 @@
   }
   slides.push({ kind: "end" });
   setlist.push({ label: "Konec", start: slides.length - 1, kind: "end" });
-
-  /* Rozdělení části na slajdy: "---" = ruční zlom, jinak max. 4 řádky (rovnoměrně). */
-  function splitChunks(lines) {
-    const groups = [[]];
-    for (const l of lines) { if (l.trim() === "---") groups.push([]); else groups[groups.length - 1].push(l); }
-    const out = [];
-    for (const g of groups.filter(g => g.length)) {
-      const n = Math.ceil(g.length / 4), size = Math.ceil(g.length / n);
-      for (let i = 0; i < g.length; i += size) out.push(g.slice(i, i + size));
-    }
-    return out;
-  }
 
   /* ---------- Parsování řádku s akordy ---------- */
   function parseLine(raw) {

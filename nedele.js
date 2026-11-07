@@ -75,7 +75,8 @@ PROGRAMS.nedele = {
           lines: [
             "[C]Tvoje lás[G]ka, ona uzdra[e]ví a vysvobo[D]dí.",
             "[C]Tvoje ná[G]ruč je tam, kde chci [e]být a neode[D]jít.",
-            "[C]Budu zpí[G]vat a chválit Tě [e]dál za všechno, cos [D]dal.",
+            "---",
+            "[C]Budu zpí[G]vat a chválit Tě [e]dál\nza všechno, cos [D]dal.",
             "---",
             "Proč bych se [C]bál, vždyť se mnou je [G]Král,",
             "tak [e]nekonečný [D]Pán, můj [C]oceán. [G] [e] [D]"
@@ -159,8 +160,8 @@ PROGRAMS.nedele = {
         "2": {
           label: "2.",
           lines: [
-            "[C]Stokrát víc než slova hladká [F]jeden čin [C]znamená,",
-            "[C]však musíš zadní vrátka [F]nechat [C]zavřená.",
+            "[C]Stokrát víc než slova hladká\n[F]jeden čin [C]znamená,",
+            "[C]však musíš zadní vrátka\n[F]nechat [C]zavřená.",
             "[C]Mně čistá voda schází, [F]mně chybí její [C]třpyt,",
             "[C]však z moře lží a frází [F]se voda nedá [C]pít."
           ]
@@ -168,7 +169,7 @@ PROGRAMS.nedele = {
         "3": {
           label: "3.",
           lines: [
-            "[C]Jak vytékají říčky [F]zpod úbočí [C]hor,",
+            "[C]Jak vytékají říčky\n[F]zpod úbočí [C]hor,",
             "[C]tak pod očními víčky [F]já ukrývám svůj [C]vzdor.",
             "[C]Ten pramen vody živé [F]má v sobě každý z [C]nás",
             "[C]a vytryskne jak gejzír, [F]když přijde jeho [C]čas."
