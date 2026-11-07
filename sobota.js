@@ -129,7 +129,7 @@ PROGRAMS.sobota = {
         label: "Ref.",
         lines: [
           "[D]Máš, má ovečko, [A]dávno spát",
-          "a [G]můžeš hrát, ty mě [E]můžeš hrát,",
+          "a [G]můžeš hřát, ty mě [E]můžeš hřát,",
           "---",
           "vždyť [D]přijdou se [G]ptát, zítra zas při[D]jdou se [G]ptát,",
           "jestli ty v [D]mých předsta[G]vách\nuž [D]mizíš."

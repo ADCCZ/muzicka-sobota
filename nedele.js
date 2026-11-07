@@ -134,7 +134,7 @@ PROGRAMS.nedele = {
           lines: [
             "[a]Žádná [G]síla mocí [d]temných,",
             "[a]ani [G]život, ani [d]smrt,",
-            "[F]nic nás [G]více neo[C(/E)]dělí",
+            "[F]nic nás [G]více neod[C(/E)]dělí",
             "[F]od Tvé [a]lásky, Bože [G]náš."
           ]
         },
