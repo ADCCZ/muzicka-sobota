@@ -128,7 +128,7 @@ body.presenter { background: var(--ui); font-family: system-ui, -apple-system, "
   gap: 10px; padding: 10px;
 }
 .p-top { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.p-top .brand { font-family: "Blaka"; font-size: 24px; color: var(--pink); margin-right: 10px; }
+.p-top .brand { font-family: "Blaka"; font-size: 24px; color: var(--pink); margin-right: 10px; text-decoration: none; }
 .p-top .count { font-variant-numeric: tabular-nums; color: #bba; margin-right: auto; }
 .p-top .clock { font-variant-numeric: tabular-nums; font-size: 20px; margin-left: 8px; color: var(--white); }
 .btn {
@@ -157,3 +157,18 @@ body.presenter { background: var(--ui); font-family: system-ui, -apple-system, "
 .p-parts .lbl { color: #a98; font-size: 13px; margin-right: 4px; }
 .p-parts button { min-width: 40px; }
 .p-parts .src { margin-left: auto; color: #a98; font-size: 13px; }
+
+/* ============ ROZCESTNÍK ============ */
+body.chooser .stage { position: fixed; inset: 0; }
+.s-chooser .wrap {
+  position: absolute; left: 33cqw; right: 4cqw; top: 0; bottom: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8cqh;
+}
+.s-chooser .logo { width: min(52cqw, 100cqh); }
+.s-chooser .choices { display: flex; flex-direction: column; gap: 3cqh; align-items: center; }
+.s-chooser .choice {
+  font-size: min(6.5cqh, 4cqw); color: var(--pink); text-decoration: none;
+  padding: 1.2cqh 3cqw; border: 2px solid rgba(237, 206, 211, .35); border-radius: 1.4cqh;
+  transition: background .2s, color .2s;
+}
+.s-chooser .choice:hover, .s-chooser .choice:focus-visible { background: var(--pink); color: #2a1210; outline: none; }

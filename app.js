@@ -9,14 +9,41 @@
   const params = new URLSearchParams(location.search);
   const HASH_PROJ = /^#projektor$/i.test(location.hash);
   const VIEW = HASH_PROJ || /^(projektor|projector|beamer)$/i.test(params.get("view") || "") ? "projector" : "presenter";
-  const CHANNEL = "muzicka-sobota-v1";
-  const STORE = "muzicka-sobota-state";
+  let PID = params.get("p");
+  if (!PROGRAMS[PID]) {
+    if (VIEW === "projector") PID = Object.keys(PROGRAMS)[0];
+    else return showChooser();
+  }
+  const PROG = PROGRAMS[PID];
+  const CHANNEL = "muzicka-" + PID + "-v1";
+  const STORE = "muzicka-" + PID + "-state";
+
+  /* Úvodní rozcestník: výběr programu */
+  function showChooser() {
+    document.body.className = "chooser";
+    const stage = document.createElement("div");
+    stage.className = "stage s-chooser";
+    const wrap = document.createElement("div"); wrap.className = "wrap";
+    const logo = document.createElement("img"); logo.src = "assets/muzicka-logo.png"; logo.alt = "múzička"; logo.className = "logo";
+    const list = document.createElement("div"); list.className = "choices";
+    for (const [id, pr] of Object.entries(PROGRAMS)) {
+      const a = document.createElement("a");
+      a.href = "?p=" + encodeURIComponent(id);
+      a.className = "choice blk";
+      a.textContent = pr.subtitle;
+      list.append(a);
+    }
+    const fig = document.createElement("img"); fig.src = "assets/figura.webp"; fig.className = "figura"; fig.alt = "";
+    wrap.append(logo, list);
+    stage.append(fig, wrap);
+    document.getElementById("app").append(stage);
+  }
 
   /* ---------- Slajdy z PROGRAMu ---------- */
   const slides = [{ kind: "title" }];
   const setlist = [{ label: "Titulní strana", start: 0, kind: "title" }];
   let songNo = 0;
-  for (const item of PROGRAM) {
+  for (const item of PROG.items) {
     if (item.type === "section") {
       setlist.push({ label: item.title, start: slides.length, kind: "section" });
       slides.push({ kind: "section", title: item.title });
@@ -105,7 +132,7 @@
 
     if (slide.kind === "title") {
       const w = el("div", "wrap");
-      w.append(logo(), el("div", "sub blk", "sobotní večerní program"));
+      w.append(logo(), el("div", "sub blk", PROG.subtitle));
       c.append(figura(), w);
     } else if (slide.kind === "section") {
       const w = el("div", "wrap");
@@ -113,7 +140,8 @@
       c.append(figura(), w);
     } else if (slide.kind === "song") {
       const w = el("div", "wrap");
-      w.append(el("div", "big blk", slide.song.title), el("div", "author", slide.song.author));
+      w.append(el("div", "big blk", slide.song.title));
+      if (slide.song.author) w.append(el("div", "author", slide.song.author));
       c.append(figura(), w);
     } else if (slide.kind === "end") {
       const w = el("div", "wrap"); w.append(logo()); c.append(figura(), w);
@@ -204,7 +232,7 @@
   /* ================= PROJEKTOR ================= */
   if (VIEW === "projector") {
     document.body.className = "projector";
-    document.title = "Múzička – projektor";
+    document.title = "Múzička – projektor (" + PROG.name + ")";
     const stage = el("div", "stage");
     const hint = el("div", "hint", "F nebo dvojklik = celá obrazovka · ← → listování · B = černá obrazovka");
     app.append(stage, hint);
@@ -228,11 +256,13 @@
 
   if (VIEW === "presenter") {
     document.body.className = "presenter";
+    document.title = "Múzička – " + PROG.name;
     try { chordsOn = localStorage.getItem(STORE + "-chords") !== "0"; } catch (_) {}
 
     const grid = el("div", "p-grid");
     const top = el("div", "p-top");
-    const brand = el("span", "brand", "múzička");
+    const brand = el("a", "brand", "múzička · " + PROG.name.toLowerCase());
+    brand.href = location.pathname; brand.title = "Zpět na výběr programu";
     const count = el("span", "count");
     const bPrev = el("button", "btn", "◀ Zpět");
     const bNext = el("button", "btn", "Další ▶");
@@ -274,7 +304,7 @@
     };
     bChords.onclick = toggleChords;
     openProjector = () => {
-      const url = location.pathname + "?view=projektor#" + (state.index + 1);
+      const url = location.pathname + "?p=" + encodeURIComponent(PID) + "&view=projektor#" + (state.index + 1);
       let w = null;
       try { w = window.open(url, "muzicka-projektor", "popup,width=1280,height=720"); } catch (_) {}
       if (!w) {

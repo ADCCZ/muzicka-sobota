@@ -11,7 +11,10 @@
  * Pořadí slok v písni určuje pole `order` (klíče z `parts`).
  */
 
-const PROGRAM = [
+PROGRAMS.sobota = {
+  name: "Sobota večer",
+  subtitle: "sobotní večerní program",
+  items: [
   {
     type: "song",
     title: "Ježíši, dávno už to vím",
@@ -206,4 +209,5 @@ const PROGRAM = [
     },
     order: ["1", "R", "2", "R"]
   }
-];
+]
+};
