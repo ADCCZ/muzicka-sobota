@@ -105,67 +105,6 @@ PROGRAMS.sobota = {
     order: ["1", "2", "3", "4"]
   },
 
-  {
-    type: "song",
-    title: "Otče náš nebeský",
-    author: "Karel Řežábek",
-    source: "Zpěvník 4, str. 34",
-    parts: {
-      "R": {
-        label: "Ref.",
-        lines: [
-          "[e]Otče náš [C]nebeský, [D]posvěť se jméno [e]Tvé.",
-          "[e]Přijď Tvoje [C]království, [D]buď vůle [e]Tvá."
-        ]
-      },
-      "1": {
-        label: "1.",
-        lines: [
-          "[D]Tam, kde lid Tvůj se [e]probouzí,",
-          "[D]tam, kde roste Tvůj [e]chrám,",
-          "---",
-          "[C]v srdcích všech dětí [D]Tvých",
-          "ať [C]vítězí [D]vůle [e]Tvá, [(D)]",
-          "ať [C]vítězí [D]vůle [e]Tvá."
-        ]
-      },
-      "2": {
-        label: "2.",
-        lines: [
-          "[D]Tam, kde Duch svatý [e]přichází,",
-          "[D]dary Své roz[e]dává,",
-          "---",
-          "[C]jaká je teď vůle [D]Tvá?",
-          "Co [C]dal jsem ti, [D]předávej [e]dál, [(D)]",
-          "co [C]dal jsem ti, [D]předávej [e]dál."
-        ]
-      },
-      "3": {
-        label: "3.",
-        lines: [
-          "[D]Někdy mne zkoušky tak [e]svírají,",
-          "[D]padám a prohrá[e]vám.",
-          "---",
-          "[C]Řekni, jak vůle Tvá [D]zní?",
-          "Bo[C]juj až do [D]vítěz[e]ství, [(D)]",
-          "bo[C]juj až do [D]vítěz[e]ství."
-        ]
-      },
-      "4": {
-        label: "4.",
-        lines: [
-          "[D]Pane, můj bratr mne [e]nemá rád,",
-          "[D]za zády mne pomlou[e]vá.",
-          "---",
-          "[C]Toužím teď vůli Tvou [D]znát.",
-          "Od[C]pusť mu tak, [D]jako [e]já, [(D)]",
-          "od[C]pusť mu tak, [D]jako [e]já."
-        ]
-      }
-    },
-    order: ["R", "1", "R", "2", "R", "3", "R", "4", "R"]
-  },
-
   { type: "section", title: "Písně na přání" },
 
   {

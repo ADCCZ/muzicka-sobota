@@ -95,7 +95,59 @@ PROGRAMS.nedele = {
       order: ["1", "B", "R", "2", "B", "R"]
     },
 
-    { type: "section", title: "Zamyšlení" },
+    {
+      type: "song",
+      title: "Zlaté město",
+      author: "Max Lucado",
+      source: "Zpěvník 4, str. 55",
+      parts: {
+        "1": {
+          label: "1.",
+          lines: [
+            "[a]Zkoušky [G]tvé již brzy [d]skončí,",
+            "[a]Jeho [G]dlaň ti milost [d]dá.",
+            "[F]Zraně[G]ní tvá uzdra[C(/E)]ví se,",
+            "[F]novou [a]zem ti otví[G]rá."
+          ]
+        },
+        "2": {
+          label: "2.",
+          lines: [
+            "[a]K Tvému [G]trůnu přichá[d]zíme,",
+            "[a]domů [G]shromáždil jsi [d]nás.",
+            "[F]Vítá[G]ni jsme Otcem z [C(/E)]nebes,",
+            "[F]oče[a]kávání je [G]čas."
+          ]
+        },
+        "R": {
+          label: "Ref.",
+          lines: [
+            "Setká[a]me se ve městě [C]zlatém, čeká [G]nás Jeruza[d]lém,",
+            "žádná [F]bolest ani [G]pláč už nebu[a]dou.",
+            "---",
+            "Budem [a]stát s anděly a [C]zpívat: „Svatý, [G]svatý Berán[d]ek“,",
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+          ]
+        },
+        "3": {
+          label: "3.",
+          lines: [
+            "[a]Žádná [G]síla mocí [d]temných,",
+            "[a]ani [G]život, ani [d]smrt,",
+            "[F]nic nás [G]více neo[C(/E)]dělí",
+            "[F]od Tvé [a]lásky, Bože [G]náš."
+          ]
+        },
+        "Z": {
+          label: "Závěr",
+          lines: [
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou,",
+            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+          ]
+        }
+      },
+      order: ["1", "2", "R", "3", "R", "Z"]
+    },
 
     {
       type: "song",
@@ -179,60 +231,71 @@ PROGRAMS.nedele = {
       order: ["1", "R", "2", "R", "3", "R"]
     },
 
+    { type: "section", title: "Písně na přání" },
+
     { type: "section", title: "Vysvětlení hry" },
+
+    { type: "section", title: "Zamyšlení" },
 
     {
       type: "song",
-      title: "Zlaté město",
-      author: "Max Lucado",
-      source: "Zpěvník 4, str. 55",
+      title: "Otče náš nebeský",
+      author: "Karel Řežábek",
+      source: "Zpěvník 4, str. 34",
       parts: {
+        "R": {
+          label: "Ref.",
+          lines: [
+            "[e]Otče náš [C]nebeský, [D]posvěť se jméno [e]Tvé.",
+            "[e]Přijď Tvoje [C]království, [D]buď vůle [e]Tvá."
+          ]
+        },
         "1": {
           label: "1.",
           lines: [
-            "[a]Zkoušky [G]tvé již brzy [d]skončí,",
-            "[a]Jeho [G]dlaň ti milost [d]dá.",
-            "[F]Zraně[G]ní tvá uzdra[C(/E)]ví se,",
-            "[F]novou [a]zem ti otví[G]rá."
+            "[D]Tam, kde lid Tvůj se [e]probouzí,",
+            "[D]tam, kde roste Tvůj [e]chrám,",
+            "---",
+            "[C]v srdcích všech dětí [D]Tvých",
+            "ať [C]vítězí [D]vůle [e]Tvá, [(D)]",
+            "ať [C]vítězí [D]vůle [e]Tvá."
           ]
         },
         "2": {
           label: "2.",
           lines: [
-            "[a]K Tvému [G]trůnu přichá[d]zíme,",
-            "[a]domů [G]shromáždil jsi [d]nás.",
-            "[F]Vítá[G]ni jsme Otcem z [C(/E)]nebes,",
-            "[F]oče[a]kávání je [G]čas."
-          ]
-        },
-        "R": {
-          label: "Ref.",
-          lines: [
-            "Setká[a]me se ve městě [C]zlatém, čeká [G]nás Jeruza[d]lém,",
-            "žádná [F]bolest ani [G]pláč už nebu[a]dou.",
+            "[D]Tam, kde Duch svatý [e]přichází,",
+            "[D]dary Své roz[e]dává,",
             "---",
-            "Budem [a]stát s anděly a [C]zpívat: „Svatý, [G]svatý Berán[d]ek“,",
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+            "[C]jaká je teď vůle [D]Tvá?",
+            "Co [C]dal jsem ti, [D]předávej [e]dál, [(D)]",
+            "co [C]dal jsem ti, [D]předávej [e]dál."
           ]
         },
         "3": {
           label: "3.",
           lines: [
-            "[a]Žádná [G]síla mocí [d]temných,",
-            "[a]ani [G]život, ani [d]smrt,",
-            "[F]nic nás [G]více neo[C(/E)]dělí",
-            "[F]od Tvé [a]lásky, Bože [G]náš."
+            "[D]Někdy mne zkoušky tak [e]svírají,",
+            "[D]padám a prohrá[e]vám.",
+            "---",
+            "[C]Řekni, jak vůle Tvá [D]zní?",
+            "Bo[C]juj až do [D]vítěz[e]ství, [(D)]",
+            "bo[C]juj až do [D]vítěz[e]ství."
           ]
         },
-        "Z": {
-          label: "Závěr",
+        "4": {
+          label: "4.",
           lines: [
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou,",
-            "navě[F]ky stát v uctí[G]vání před Te[a]bou."
+            "[D]Pane, můj bratr mne [e]nemá rád,",
+            "[D]za zády mne pomlou[e]vá.",
+            "---",
+            "[C]Toužím teď vůli Tvou [D]znát.",
+            "Od[C]pusť mu tak, [D]jako [e]já, [(D)]",
+            "od[C]pusť mu tak, [D]jako [e]já."
           ]
         }
       },
-      order: ["1", "2", "R", "3", "R", "Z"]
+      order: ["R", "1", "R", "2", "R", "3", "R", "4", "R"]
     },
 
     {
