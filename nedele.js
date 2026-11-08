@@ -158,39 +158,6 @@ PROGRAMS.nedele = {
     },
 
     {
-      type: "song",
-      title: "Budem ako strom",
-      author: "Tretí deň",
-      source: "Zpěvník 4, str. 6",
-      parts: {
-        "R": {
-          label: "Ref.",
-          lines: [
-            "Budem ako [E]strom, [A] [E]",
-            "[A]sadený pri [E]vode, [A] [E]",
-            "[A]a mojou [E]oporou [A] [E]",
-            "[A]je mi živý [E]Pán. [A] [E]"
-          ]
-        },
-        "1": {
-          label: "1.",
-          lines: [
-            "[c#]Nech len príde [F#]des,",
-            "ja [c#]neutečiem [F#]preč."
-          ]
-        },
-        "2": {
-          label: "2.",
-          lines: [
-            "[c#]Nebudem sa [F#]báť,",
-            "hoc [c#]aj príde [F#]dážď."
-          ]
-        }
-      },
-      order: ["R", "1", "R", "2", "R"]
-    },
-
-    {
       type: "media",
       title: "Rybářská spojka",
       note: "naskenuj a pusť si video",
@@ -246,6 +213,41 @@ PROGRAMS.nedele = {
         }
       },
       order: ["1", "R", "2", "R", "3", "R"]
+    },
+
+    { type: "section", title: "Zamyšlení" },
+
+    {
+      type: "song",
+      title: "Budem ako strom",
+      author: "Tretí deň",
+      source: "Zpěvník 4, str. 6",
+      parts: {
+        "R": {
+          label: "Ref.",
+          lines: [
+            "Budem ako [E]strom, [A] [E]",
+            "[A]sadený pri [E]vode, [A] [E]",
+            "[A]a mojou [E]oporou [A] [E]",
+            "[A]je mi živý [E]Pán. [A] [E]"
+          ]
+        },
+        "1": {
+          label: "1.",
+          lines: [
+            "[c#]Nech len príde [F#]des,",
+            "ja [c#]neutečiem [F#]preč."
+          ]
+        },
+        "2": {
+          label: "2.",
+          lines: [
+            "[c#]Nebudem sa [F#]báť,",
+            "hoc [c#]aj príde [F#]dážď."
+          ]
+        }
+      },
+      order: ["R", "1", "R", "2", "R"]
     },
 
     {
