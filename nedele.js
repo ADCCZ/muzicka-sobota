@@ -1,4 +1,5 @@
-/* Program: Múzička – nedělní ranní program (formát viz songs.js) */
+/* Program: Múzička – nedělní ranní program (formát viz sobota.js)
+ * type: "media" = slajd s obrázkem a QR kódem (title, note, image, qr, url). */
 
 PROGRAMS.nedele = {
   name: "Neděle ráno",
@@ -156,8 +157,6 @@ PROGRAMS.nedele = {
       order: ["R", "1", "R", "2", "R", "3", "R", "4", "R"]
     },
 
-    { type: "section", title: "Zamyšlení" },
-
     {
       type: "song",
       title: "Budem ako strom",
@@ -189,6 +188,15 @@ PROGRAMS.nedele = {
         }
       },
       order: ["R", "1", "R", "2", "R"]
+    },
+
+    {
+      type: "media",
+      title: "Rybářská spojka",
+      note: "naskenuj a pusť si video",
+      image: "assets/uzel.png",
+      qr: "assets/qr-video.png",
+      url: "https://youtu.be/Z-Rqj8RTwj0"
     },
 
     {

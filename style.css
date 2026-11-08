@@ -70,6 +70,17 @@ button { font: inherit; }
 .s-song .big { font-size: min(14cqh, 8cqw); color: var(--white); }
 .s-song .author { font-family: "Grenze"; font-weight: 400; font-size: min(5cqh, 3cqw); color: var(--pink); }
 
+/* Obrázek + QR kód */
+.s-media .wrap { position: absolute; inset: 5cqh 5cqw 7cqh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5cqh; }
+.s-media .big { font-size: min(12cqh, 7.5cqw); color: var(--pink); text-align: center; }
+.s-media .row { display: flex; align-items: center; justify-content: center; gap: 6cqw; }
+.s-media .card { background: var(--white); border-radius: 2.2cqh; padding: 1.4cqh; box-shadow: 0 1cqh 4cqh rgba(0,0,0,.45); line-height: 0; }
+.s-media .pic { height: min(56cqh, 40cqw); width: auto; border-radius: 1cqh; }
+.s-media .qr { height: min(44cqh, 30cqw); width: auto; image-rendering: pixelated; }
+.s-media .qrcol { display: flex; flex-direction: column; align-items: center; gap: 2.4cqh; }
+.s-media .cap { font-family: "Grenze"; font-weight: 500; font-size: min(4.4cqh, 2.7cqw); color: var(--white); }
+.s-media .mini-logo { position: absolute; right: 3.2cqw; bottom: 3.6cqh; width: min(13cqw, 25cqh); opacity: .35; }
+
 /* Konec */
 .s-end .wrap { position: absolute; left: 33cqw; right: 4cqw; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; }
 .s-end .logo { width: min(48cqw, 92cqh); }

@@ -110,7 +110,10 @@
   const setlist = [{ label: "Titulní strana", start: 0, kind: "title" }];
   let songNo = 0;
   for (const item of PROG.items) {
-    if (item.type === "section") {
+    if (item.type === "media") {
+      setlist.push({ label: item.title, sub: "obrázek + QR kód", start: slides.length, kind: "section" });
+      slides.push({ kind: "media", item });
+    } else if (item.type === "section") {
       setlist.push({ label: item.title, sub: item.note, start: slides.length, kind: "section" });
       slides.push({ kind: "section", title: item.title, note: item.note });
     } else {
@@ -198,6 +201,18 @@
       w.append(el("div", "big blk", slide.song.title));
       if (slide.song.author) w.append(el("div", "author", slide.song.author));
       c.append(figura(), w);
+    } else if (slide.kind === "media") {
+      const it = slide.item, w = el("div", "wrap");
+      const row = el("div", "row");
+      if (it.image) { const cd = el("div", "card"); cd.append(img(it.image, "pic")); row.append(cd); }
+      if (it.qr) {
+        const col = el("div", "qrcol"), cd = el("div", "card");
+        cd.append(img(it.qr, "qr")); col.append(cd);
+        if (it.note) col.append(el("div", "cap", it.note));
+        row.append(col);
+      }
+      w.append(el("div", "big blk", it.title), row);
+      c.append(w, logo("mini-logo"));
     } else if (slide.kind === "end") {
       const w = el("div", "wrap"); w.append(logo()); c.append(figura(), w);
     } else if (slide.kind === "lyrics") {
